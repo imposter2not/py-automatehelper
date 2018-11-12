@@ -1,2 +1,21 @@
 notes.txt
 
+#still to come
+pull current focus window
+loop
+pickup mouse click
+target focus window that is clicked
+take screenshot without cursor
+capture cursor location, relative to window (for resizing).   save last click position and corresponding screenshot
+take or crop small image relative to cursor.  a square or possibly more related to current ratio.
+template match with source screenshot
+check number of matches to current box
+if only 1 match, save shot out, set default box starting box size... possibly reduce and retry, but this make take awhile.
+
+#dumb_mistakes
+don't name files with a hyphen, use underscores; python doesn't seem to like it
+
+> i2n_window.py
+windowtitle is pulled as: py-automatehelper [E:\projects\py-automatehelper] - ...\lib\i2n_window.py [py-automatehelper] - PyCharm (Administrator)
+windowlist is generated as: 'py-automatehelper [E:\\projects\\py-automatehelper] - ...\\lib\\i2n_window.py [py-automatehelper] - PyCharm (Administrator)
+problem with escape characters.  could remove all non alpha numerical characters for matching.
