@@ -2,7 +2,7 @@
 """
 manipulating window
 """
-import PIL
+from PIL import Image, ImageGrab
 import os
 import time
 import re
@@ -21,7 +21,8 @@ def getcurrentwindow():
     active_window_title = win32gui.GetWindowText(win32gui.GetForegroundWindow())
     active_window_hwnd = win32gui.GetForegroundWindow()
     # print(active_window_title)
-    print(active_window_hwnd)
+    # print(active_window_hwnd)
+    return(active_window_hwnd)
     # print(getwindowhandle(active_window_title))
     # getwindowhandle(active_window_hwnd)
 
@@ -53,15 +54,27 @@ def focuswindowbytitle(win_title):
 
 
 def screenSave(windowbox):
-    im = PIL.ImageGrab.grab(windowbox)
+    im = ImageGrab.grab(windowbox)
     return(im)
 
-def screenGrab(windowbox):
-    im = PIL.ImageGrab.grab(windowbox)
-    im.save('imagelook.png')
+
+def screengrab(windowbox, file_name):
+    im = ImageGrab.grab(windowbox)
+    im.save(file_name)
+
+
+def handleSave(handle, img_filename):
+    print(handle)
+    window_bounding_box = getbbox(handle)
+    print(window_bounding_box)
+    im = ImageGrab.grab(window_bounding_box)
+    im.save(img_filename)
+
 
 def getbbox(handle):
+    # print(win32gui.GetWindowRect(handle))
     return(win32gui.GetWindowRect(handle))
+    # return win32gui.GetWindowRect(handle)
 
 # def main(windowbox):
 # 	screenGrab(windowbox)

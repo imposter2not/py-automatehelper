@@ -19,3 +19,6 @@ don't name files with a hyphen, use underscores; python doesn't seem to like it
 windowtitle is pulled as: py-automatehelper [E:\projects\py-automatehelper] - ...\lib\i2n_window.py [py-automatehelper] - PyCharm (Administrator)
 windowlist is generated as: 'py-automatehelper [E:\\projects\\py-automatehelper] - ...\\lib\\i2n_window.py [py-automatehelper] - PyCharm (Administrator)
 problem with escape characters.  could remove all non alpha numerical characters for matching.
+
+>PIL, Image and ImageGrab
+if you import PIL, it won't know what you are looking for.  You need to use From PIL import Image, ImageGrab etc.
