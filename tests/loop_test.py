@@ -1,14 +1,17 @@
 #! python3
 
 #python by default doesn't load up packages in a path, this loads a path
+# python by default doesn't load up packages in a path, this loads a path
 import sys
+
 from pynput.keyboard import Key
+# python by default doesn't load up packages in a path, this loads a path
 # python by default doesn't load up packages in a path, this loads a path
 import sys
 
 from pynput.keyboard import Key
 
-sys.path.insert(0, './lib')
+sys.path.insert(0, '../lib')
 import i2n_window as i2win
 
 from pynput.mouse import Listener

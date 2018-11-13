@@ -5,8 +5,8 @@ sending mouse commands
 tip functions
 """
 import ctypes
+
 import pyautogui
-import time
 
 
 #mouse functions

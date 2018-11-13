@@ -22,3 +22,8 @@ problem with escape characters.  could remove all non alpha numerical characters
 
 >PIL, Image and ImageGrab
 if you import PIL, it won't know what you are looking for.  You need to use From PIL import Image, ImageGrab etc.
+
+>getting a timer
+I think I can use just one variable for an accurate timer.  I was thinking about initial time - finishing time, etc.  But
+I think I'd just have stored time, if there is a stored time, take the time, check it.  get value and null the time.  Else
+store the time.

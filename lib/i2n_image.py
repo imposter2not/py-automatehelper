@@ -3,9 +3,8 @@
 i2n-image.py
 """
 
-import numpy as np
 import cv2
-import matplotlib.pyplot as plt
+
 
 def testload():
 	print("i2n-image.py loaded")

@@ -2,13 +2,11 @@
 """
 manipulating window
 """
-from PIL import Image, ImageGrab
-import os
-import time
 import re
-import string
 import win32gui
+
 import win32com.client
+from PIL import ImageGrab
 
 
 def testload():

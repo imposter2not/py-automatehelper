@@ -5,8 +5,9 @@ sending keyboard commands with different methods
 tip functions
 """
 import ctypes
-import pyautogui
 import time
+
+import pyautogui
 
 ###ctype input###
 
