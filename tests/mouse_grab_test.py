@@ -18,10 +18,7 @@ stopwatch_value = 0
 
 
 def on_click(x, y, button, pressed):
-    print('{0} at {1}'.format(
-        'Pressed' if pressed else 'Released',
-        (x, y)))
-    # debug
+    print('{0} at {1}'.format('Pressed' if pressed else 'Released', (x, y)))
     if pressed:
         global stopwatch_value
         if stopwatch_value != 0:
@@ -31,13 +28,15 @@ def on_click(x, y, button, pressed):
         # the stopwatch should only stop on mouse click, mouse click should not start one
         # else:
         #     stopwatch_value = time.strftime("%H%M%S", time.gmtime())
-
-        time.sleep(0.5)
+        # time.sleep(0.5)
         file_string = time.strftime("%Y%m%d-%H%M%S", time.localtime())
         save_name = './images/' + file_string + '.png'
+        print(save_name)
         window_handle = i2win.getcurrentwindow()
         bounding_box: object = i2win.getbbox(window_handle)
         i2win.screengrab(bounding_box, save_name)
+        print("mouse x,y: " + x + ", " + y)
+        print("bounding: " + bounding_box)
         print("saved: " + save_name)
 
         # log_string = file_string + ", event, click, " + x + ", " + y + ", " + str(bounding_box) + ", " + save_name
