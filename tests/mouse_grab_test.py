@@ -25,20 +25,17 @@ def on_click(x, y, button, pressed):
             stopwatch_value = float(time.strftime("%H%M%S", time.gmtime())) - float(stopwatch_value)
             print(stopwatch_value)
             stopwatch_value = 0
-        # the stopwatch should only stop on mouse click, mouse click should not start one
-        # else:
-        #     stopwatch_value = time.strftime("%H%M%S", time.gmtime())
-        # time.sleep(0.5)
-        file_string = time.strftime("%Y%m%d-%H%M%S", time.localtime())
-        save_name = './images/' + file_string + '.png'
-        print(save_name)
-        window_handle = i2win.getcurrentwindow()
-        bounding_box: object = i2win.getbbox(window_handle)
-        i2win.screengrab(bounding_box, save_name)
-        print("mouse x,y: " + x + ", " + y)
-        print("bounding: " + bounding_box)
-        print("saved: " + save_name)
-
+        i2win.capturewindow(x, y)
+        # if(True):
+        # file_string = time.strftime("%Y%m%d-%H%M%S", time.localtime())
+        # save_name = './images/' + file_string + '.png'
+        # print(save_name)
+        # window_handle = i2win.getcurrentwindow()
+        # bounding_box: object = i2win.getbbox(window_handle)
+        # i2win.screengrab(bounding_box, save_name)
+        # print("mouse x,y: " + x + ", " + y)
+        # print("bounding: " + bounding_box)
+        # print("saved: " + save_name)
         # log_string = file_string + ", event, click, " + x + ", " + y + ", " + str(bounding_box) + ", " + save_name
         # temp_log.write(log_string)
 
