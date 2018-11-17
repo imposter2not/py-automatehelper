@@ -9,12 +9,14 @@ import i2n_gui as i2gui
 # import i2n_tools as i2tool
 import time
 from pynput.keyboard import Listener as kListener, Key, KeyCode
-from pynput.mouse import Listener as mListener
+from pynput.mouse import Listener as mListener, Controller
 
 file_path = './logs/temp_log.txt'
 temp_log = open(file_path, "w")
 # global stopwatch_value
 stopwatch_value = 0
+
+mouse = Controller()
 
 
 def on_click(x, y, button, pressed):
@@ -54,12 +56,15 @@ def on_press(key):
 
 
 def on_release(key):
-    print('{0} release'.format(
-        key))
+    print('{0} release'.format(key))
     if key == Key.esc:
         # Stop listener
         mListener.stop()
         return False
+    # set trigger for a detector?
+    if key == Key.shift:
+        print(mouse.position)
+
 
 
 with kListener(on_press=on_press,

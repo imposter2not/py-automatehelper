@@ -12,9 +12,7 @@ from PIL import ImageGrab
 
 def testload():
     print("i2n-window.py loaded")
-
 # get the title of the current active window
-
 
 def getcurrentwindow():
     active_window_title = win32gui.GetWindowText(win32gui.GetForegroundWindow())
@@ -94,7 +92,7 @@ def capturewindow(cursor_x, cursor_y):
     # need to do checks to make sure this position isn't negative
     # after testing, if it is negative it will show black on the image
     # probably best to have this happen in another function so it can be looped
-    windowcrop(rect, cursor_pos, im, file_string)
+    # windowcrop(rect, cursor_pos, im, file_string)
     del im
     print("debug-capturewindow done")
 
